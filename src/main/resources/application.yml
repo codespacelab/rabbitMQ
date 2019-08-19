@@ -1,0 +1,19 @@
+server:
+  port: 8555
+
+spring:
+  application:
+    name: demo
+  rabbitmq:
+    addresses: localhost:5673,localhost:5672
+    username: admin
+    password: guest
+
+  cloud:
+    stream:
+      bindings:
+        outputChannel:
+          destination: demo
+        inputChannel:
+          destination: demo
+          group: demo-group
